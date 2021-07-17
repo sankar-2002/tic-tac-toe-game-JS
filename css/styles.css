@@ -5,7 +5,29 @@
 
 body {
   font-family: "Merriweather Sans", sans-serif;
-  color: #4c6986;
+  color: white;
+  text-shadow: -1px 1px 0 #606e7d,
+    1px 1px 0 #606e7d,
+    1px -1px 0 #606e7d,
+    -1px -1px 0 #606e7d;
+  background-image: url(https://c1.wallpaperflare.com/preview/309/999/724/connection-teamwork-piece-puzzle-cooperation-business.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.left {
+  background-image: url();
+}
+
+.right {}
+
+.wrapper {}
+
+.tile-winner span {
+  color: #23CE6B;
+  background-color: green;
+  padding: 30px
 }
 
 .wrapper {
@@ -13,7 +35,7 @@ body {
   max-width: 1440px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0 auto;
 }
 
@@ -24,11 +46,12 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  border: 2px solid #4c6986;
+  border: 2px solid white;
   transition: all 0.2s ease;
   cursor: pointer;
   font-weight: bold;
   margin-top: 30px;
+  background-color: #23CE6B
 }
 
 .restart:hover {
@@ -36,16 +59,40 @@ body {
   color: white;
 }
 
+.title {
+  max-width: 500px;
+}
+
+.left {
+  margin-left: 100px;
+}
+
 .header .player-x {
   flex: 1;
   border-bottom: 5px solid #eee;
-  padding-bottom:8px;
+  padding-bottom: 8px;
+}
+
+.player-x.active {
+  color: white;
+  border-color: white;
+  background-color: #42BED7;
+  border-radius: 40px;
+  padding: 15px;
 }
 
 .header .player-o {
   flex: 1;
   border-bottom: 5px solid #eee;
-  padding-bottom:8px;
+  padding-bottom: 8px;
+}
+
+.player-o.active {
+  color: white;
+  border-color: white;
+  background-color: #bf6728;
+  border-radius: 40px;
+  padding: 10px;
 }
 
 .game {
@@ -53,13 +100,16 @@ body {
   height: 500px;
   display: flex;
   flex-direction: column;
-  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .header {
   display: flex;
-  color: #9A9A9A;
+  color: white;
   font-size: 24px;
+  font-weight: 200px;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 .board {
@@ -77,7 +127,12 @@ body {
   align-items: center;
   font-size: 80px;
   background: white;
+  background-image: url(https://c1.wallpaperflare.com/preview/874/479/641/abstract-art-artificial-artistic.jpg);
   cursor: pointer;
+  text-shadow: -1px 1px 0 black,
+    1px 1px 0 black,
+    1px -1px 0 black,
+    -1px -1px 0 black;
 }
 
 .board-tile:hover {
@@ -90,9 +145,27 @@ h1 {
 }
 
 .board-tile:not(:nth-child(3n)) {
-  border-right: 3px solid rgba(137, 163, 189, 0.5);
+  border-right: 3px solid #2f3842;
 }
 
 .board-tile:not(:nth-last-child(-n+3)) {
-  border-bottom: 3px solid rgba(137, 163, 189, 0.5);
+  border-bottom: 3px solid #2f3842;
+}
+
+.tile-x {
+  color: #42BED7;
+}
+
+.tile-o {
+  color: #bf6728;
+}
+
+@media only screen and (max-width:1200px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .left {
+    margin-bottom: 50px;
+  }
 }
